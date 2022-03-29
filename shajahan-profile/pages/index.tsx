@@ -5,7 +5,9 @@ import styles from '../styles/Home.module.css'
 export default function Home() {
   return (
     <div className=''>
-      Home
+      <Head>
+        <link rel="shortcut icon" href="tab_img.png" type="image/x-icon" />
+      </Head>
     </div>
   )
 }
