@@ -53,25 +53,30 @@ export default function ProfileHeader() {
             <div className="relative pb-32 bg-gray-800">
                 <div className="absolute inset-0">
                     <img
-                        className="w-full h-full object-cover"
+                        className="w-full h-full object-cover -scale-x-100"
                         src="profile.jpeg"
                         alt="Profile Background"
                     />
                     <div className="absolute inset-0 bg-gray-800 mix-blend-multiply" aria-hidden="true" />
                 </div>
-                <div className="relative max-w-7xl mx-auto py-24 px-4 sm:py-32 sm:px-6 lg:px-8">
-                    <h1 className="text-4xl tracking-tight text-white md:text-5xl lg:text-6xl">Shajahan Shaik</h1>
-                    <p className="mt-6 max-w-3xl text-xl text-gray-300">
 
-                    </p>
-                    <div className="lg:flex lg:flex-row flex-col lg:divide-x-2 divide-x-0 text-white">
-                        <p className="p-2 flex space-x-1"><svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                            <path strokeLinecap="round" strokeLinejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                        </svg><span>shajahan.j2se@gmail.com</span></p>
-                        <p className="p-2 flex space-x-1"><svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                            <path strokeLinecap="round" strokeLinejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
-                        </svg> <span>+91 9000425100</span></p>
+                <div className="relative max-w-7xl mx-auto py-24 px-4 sm:py-32 sm:px-2 lg:px-4">
+                    <div className="flex items-center p-2">
+                        <img src="profile_img.png" alt="Profile Imge" className=" h-44  rounded-full border-2" />
+                        <div>
+                            <h1 className="text-4xl tracking-tight text-white md:text-5xl lg:text-6xl">Shajahan Shaik</h1>
+                        <div className="lg:flex lg:flex-row flex-col lg:divide-x-2 divide-x-0 text-white">
+                            <p className="p-2 flex space-x-1"><svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                                <path strokeLinecap="round" strokeLinejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                            </svg><span>shajahan.j2se@gmail.com</span></p>
+                            <p className="p-2 flex space-x-1"><svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                                <path strokeLinecap="round" strokeLinejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                            </svg> <span>+91 9000425100</span></p>
+                        </div>
+                        </div>
+                        
                     </div>
+
                 </div>
             </div>
 
