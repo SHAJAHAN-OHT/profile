@@ -7,6 +7,7 @@ export default function Home() {
     <div className=''>
       <Head>
         <link rel="shortcut icon" href="tab_img.png" type="image/x-icon" />
+        <title>Shajahan Shaik</title>
       </Head>
     </div>
   )
