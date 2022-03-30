@@ -21,25 +21,26 @@
 // export default ProfileHeader;
 /* This example requires Tailwind CSS v2.0+ */
 import { NewspaperIcon, PhoneIcon, SupportIcon, BriefcaseIcon, AcademicCapIcon, PencilAltIcon } from '@heroicons/react/outline'
+import { useState } from 'react'
 
-const supportLinks = [
+const data = [
     {
+        id:0,
         name: 'Experience',
-        href: '/experience',
         description:
             'Varius facilisi mauris sed sit. Non sed et duis dui leo, vulputate id malesuada non. Cras aliquet purus dui laoreet diam sed lacus, fames.',
         icon: BriefcaseIcon,
     },
     {
+        id:1,
         name: 'Personal Projects',
-        href: '/personal-project',
         description:
             'Varius facilisi mauris sed sit. Non sed et duis dui leo, vulputate id malesuada non. Cras aliquet purus dui laoreet diam sed lacus, fames.',
         icon: PencilAltIcon,
     },
     {
+        id:2,
         name: 'Qualification',
-        href: '/qualification',
         description:
             'Varius facilisi mauris sed sit. Non sed et duis dui leo, vulputate id malesuada non. Cras aliquet purus dui laoreet diam sed lacus, fames.',
         icon: AcademicCapIcon,
@@ -47,8 +48,27 @@ const supportLinks = [
 ]
 
 export default function ProfileHeader() {
+    const [showhide,setShowHide] = useState<boolean>(true)
+    let [profileData,setProfileData] = useState<any>(data);
+    const[singlData, setSingleData] = useState<any>(null)
+// console.log(profileData[0])
+    const show = (id:number) => {
+        // setIndex(id)
+        // console.log(id)
+        // supportLinks = supportLinks[id]
+        // setProfileData(profileData[id])
+        setSingleData(profileData[id])
+        setShowHide(false)
+console.log(profileData[id])
+
+    }
+    const hide = (id:any)=>{
+        setSingleData(null);
+        setShowHide(true)
+
+    }
     return (
-        <div className="bg-white font-serif">
+        <div className=" font-serif">
             {/* Header */}
             <div className="relative pb-32 bg-gray-800">
                 <div className="absolute inset-0">
@@ -68,7 +88,7 @@ export default function ProfileHeader() {
                             <div className="lg:flex lg:flex-row flex-col lg:divide-x-2 divide-x-0 text-white">
                                 <p className="p-2 flex space-x-1"><svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                                     <path strokeLinecap="round" strokeLinejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                                </svg><span>shajahan.j2se@gmail.com</span></p>
+                                </svg><span>shajahan.fsdev@gmail.com</span></p>
                                 <p className="p-2 flex space-x-1"><svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                                     <path strokeLinecap="round" strokeLinejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
                                 </svg> <span>+91 9000425100</span></p>
@@ -82,14 +102,14 @@ export default function ProfileHeader() {
 
             {/* Overlapping cards */}
             <section
-                className="-mt-32 max-w-7xl mx-auto relative z-10 pb-32 px-4 sm:px-6 lg:px-8"
+                className="-mt-32 max-w-7xl mx-auto relative px-4 sm:px-6 lg:px-8"
                 aria-labelledby="contact-heading"
             >
                 <h2 className="sr-only" id="contact-heading">
                     Contact us
                 </h2>
-                <div className="grid grid-cols-1 gap-y-20 lg:grid-cols-3 lg:gap-y-0 lg:gap-x-8 ">
-                    {supportLinks.map((link) => (
+                {singlData == null ? <div className="grid grid-cols-1 gap-y-20 lg:grid-cols-3 lg:gap-y-0 lg:gap-x-8 ">
+                    {profileData.map((link) => (
                         <div key={link.name} className="flex flex-col bg-white rounded-2xl shadow-xl">
                             <div className="flex-1 relative pt-16 px-6 pb-8 md:px-8">
                                 <div className="absolute top-0 p-5 inline-block bg-indigo-600 rounded-xl shadow-lg transform -translate-y-1/2">
@@ -99,13 +119,39 @@ export default function ProfileHeader() {
                                 <p className="mt-4 text-base text-gray-500">{link.description}</p>
                             </div>
                             <div className="p-6 bg-gray-50 rounded-bl-2xl rounded-br-2xl md:px-8">
-                                <a href={link.href} className="text-base font-medium text-indigo-700 hover:text-indigo-600">
-                                    More<span aria-hidden="true"> &rarr;</span>
-                                </a>
+                                { showhide ? <a onClick={()=>show(link?.id)} className="text-base cursor-pointer font-medium text-indigo-700 hover:text-indigo-600">
+                                    See More<span aria-hidden="true"> &rarr;</span>
+                                </a> :
+                                <a onClick={()=>hide(link?.id)}  className="text-base font-medium cursor-pointer text-indigo-700 hover:text-indigo-600">
+                                    <span aria-hidden="true"> &larr;</span>Back
+                                </a>}
                             </div>
                         </div>
                     ))}
                 </div>
+                :
+                <div className="grid grid-cols-1 gap-y-20 lg:gap-y-0 lg:gap-x-8 transform ease-in-out ">
+                    
+                        <div key={singlData.name} className="flex flex-col bg-white rounded-2xl shadow-xl">
+                            <div className="flex-1 relative pt-16 px-6 pb-8 md:px-8">
+                                <div className="absolute top-0 p-5 inline-block bg-indigo-600 rounded-xl shadow-lg transform -translate-y-1/2">
+                                    <singlData.icon className="h-6 w-6 text-white" aria-hidden="true" />
+                                </div>
+                                <h3 className="text-xl font-medium text-gray-900">{singlData.name}</h3>
+                                <p className="mt-4 text-base text-gray-500">{singlData.description}</p>
+                            </div>
+                            <div className="p-6 bg-gray-50 rounded-bl-2xl rounded-br-2xl md:px-8">
+                                { showhide ? <a onClick={()=>show(singlData?.id)} className="text-base cursor-pointer font-medium text-indigo-700 hover:text-indigo-600">
+                                    See More<span aria-hidden="true"> &rarr;</span>
+                                </a> :
+                                <a onClick={()=>hide(singlData?.id)}  className="text-base font-medium cursor-pointer text-indigo-700 hover:text-indigo-600">
+                                    <span aria-hidden="true"> &larr;</span>Back
+                                </a>}
+                            </div>
+                        </div>
+                    
+                </div>
+                }
             </section>
         </div>
     )

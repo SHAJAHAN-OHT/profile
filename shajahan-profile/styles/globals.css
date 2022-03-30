@@ -1,3 +1,16 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+body {
+    margin: 0;
+    line-height: inherit;
+    width: none;
+
+}
+
+@media screen and (min-width: 480px) {
+    body {
+        /* width: max-content;  */
+    }
+  }
