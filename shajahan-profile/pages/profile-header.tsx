@@ -22,6 +22,7 @@
 /* This example requires Tailwind CSS v2.0+ */
 import { NewspaperIcon, PhoneIcon, SupportIcon, BriefcaseIcon, AcademicCapIcon, PencilAltIcon } from '@heroicons/react/outline'
 import { useState } from 'react'
+import PersonalProjects from './personal-project';
 import Qualification from './qualification';
 
 const data = [
@@ -34,17 +35,34 @@ const data = [
     },
     {
         id: 1,
-        name: 'Personal Projects',
+        name: 'Projects',
         description:
             'Varius facilisi mauris sed sit. Non sed et duis dui leo, vulputate id malesuada non. Cras aliquet purus dui laoreet diam sed lacus, fames.',
         icon: PencilAltIcon,
-        data:[
-            {
-                id:0,
-                name:'',
-                content:''
-            }
-        ]
+        data:
+        {
+            personal_projects: [
+                {
+                    id: 0,
+                    name: '',
+                    content: ''
+                }
+            ],
+            academic_projects:[
+                {
+                    id: 0,
+                    name: 'Evaluating and Finding out the Money Laundering Accounts in Online Social Network',
+                    content: 'This is my M.Tech academic project. Aim of this project is to finding the fraud accounts in Social Networks. They are 1) Money Laundering Accounts, 2) Phishing Attackers, 3) Exploit Vulnerability.',
+                    url:'https://www.irjet.net/archives/V7/i10/IRJET-V7I10179.pdf'
+                },
+                {
+                    id: 1,
+                    name: 'Enabling Cloud Storage Auditing with Key Exposure Resistance',
+                    content: 'This is my B.Tech academic project. Aim of this project is to transform a file securely from one to another. In this, public and private keys used for file transformation.',
+                    url:''
+                }
+            ]
+        },
     },
     {
         id: 2,
@@ -82,7 +100,7 @@ const data = [
                     point: 'Programming Languages Known, HTML, CSS, JavaScript and Frameworks : React, Next js, Angular, Tailwind CSS, Nest js, Express js, MongoDB.',
                 },
                 {
-                    point: 'Good awareness on SQL',
+                    point: 'Good awareness on SQL.',
 
                 },
                 {
@@ -205,6 +223,7 @@ export default function ProfileHeader() {
                                 </div>
                                 {/* <h3 className="text-2xl font-bold text-gray-900">{singlData.name}</h3> */}
                                 <div className="mt-4 ">
+                                    {singlData.id == 1 ? <PersonalProjects props={singlData.data} /> : null}
                                     {singlData.id == 2 ? <Qualification props={singlData.data} /> : null}
                                 </div>
                             </div>
