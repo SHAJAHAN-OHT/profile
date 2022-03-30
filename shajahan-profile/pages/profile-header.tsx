@@ -22,47 +22,113 @@
 /* This example requires Tailwind CSS v2.0+ */
 import { NewspaperIcon, PhoneIcon, SupportIcon, BriefcaseIcon, AcademicCapIcon, PencilAltIcon } from '@heroicons/react/outline'
 import { useState } from 'react'
+import Qualification from './qualification';
 
 const data = [
     {
-        id:0,
+        id: 0,
         name: 'Experience',
         description:
             'Varius facilisi mauris sed sit. Non sed et duis dui leo, vulputate id malesuada non. Cras aliquet purus dui laoreet diam sed lacus, fames.',
         icon: BriefcaseIcon,
     },
     {
-        id:1,
+        id: 1,
         name: 'Personal Projects',
         description:
             'Varius facilisi mauris sed sit. Non sed et duis dui leo, vulputate id malesuada non. Cras aliquet purus dui laoreet diam sed lacus, fames.',
         icon: PencilAltIcon,
+        data:[
+            {
+                id:0,
+                name:'',
+                content:''
+            }
+        ]
     },
     {
-        id:2,
-        name: 'Qualification',
+        id: 2,
+        name: 'Skills & Qualification',
         description:
             'Varius facilisi mauris sed sit. Non sed et duis dui leo, vulputate id malesuada non. Cras aliquet purus dui laoreet diam sed lacus, fames.',
         icon: AcademicCapIcon,
+        data: {
+            qualification: [
+                {
+                    id: 1,
+                    name: 'Master of Technology in Computer Science & Engineering from 2017 to 2020',
+                    content: 'I got master of Technology certificate from Teegala Krishna Reddy Engineering College, Approved by AICTE, New Delhi and Permanent Affiliation to Jawaharlal Nehru Technological University, Hyderabad, Accredited by NBA & NAAC "A" Grade. Located in the area Medbowli, Meerpet, Saroornagar, Hyderabad.'
+                },
+                {
+                    id: 1,
+                    name: 'Bachelor of Technology in Computer Science & Engineering from 2013 to 2017',
+                    content: 'I got Bachelor of Technology certificate from Madhira Institute of Technology and Science, Affiliation to Jawaharlal Nehru Technological University, Hyderabad. Located in Kodad, Suryapet District, Telangana.'
+                },
+                {
+                    id: 1,
+                    name: 'HSC(Higher Secondary School Certificate)/ Intermediate from 2011 to 2013',
+                    content: 'My Intermediate completed in Priyadarshini Junior College. Located in Huzur Nagar, Surypet District, Telangana.'
+                },
+                {
+                    id: 1,
+                    name: 'SSC(Secondary School Certificate) from 2010 to 2011',
+                    content: 'I did Schooling n Zilla Parishat High School. Located in Amaravaram Village, Surypet District, Telangana.'
+                }],
+            skills: [
+                {
+                    point: 'Good knowledge on Fornt-end and Back-end development of Web Applications.',
+                },
+                {
+                    point: 'Programming Languages Known, HTML, CSS, JavaScript and Frameworks : React, Next js, Angular, Tailwind CSS, Nest js, Express js, MongoDB.',
+                },
+                {
+                    point: 'Good awareness on SQL',
+
+                },
+                {
+                    point: 'Knowledge on Visual Studio Code, Unity 3D Game Engine, MS-OFFICE, WPS.',
+
+                },
+                {
+                    point: 'Easily recognize structure of programming.',
+
+                },
+                {
+                    point: 'Quick learner and self motivating.',
+
+                },
+                {
+                    point: 'Passion of developing new things and my work.',
+
+                },
+                {
+                    point: 'Always learn new things. ',
+
+                }
+            ]
+
+
+        }
+
     },
 ]
 
 export default function ProfileHeader() {
-    const [showhide,setShowHide] = useState<boolean>(true)
-    let [profileData,setProfileData] = useState<any>(data);
-    const[singlData, setSingleData] = useState<any>(null)
-// console.log(profileData[0])
-    const show = (id:number) => {
+    const [showhide, setShowHide] = useState<boolean>(true)
+    let [profileData, setProfileData] = useState<any>(data);
+    const [singlData, setSingleData] = useState<any>(null)
+    // console.log(profileData[0])
+    const show = (id: number) => {
         // setIndex(id)
         // console.log(id)
         // supportLinks = supportLinks[id]
         // setProfileData(profileData[id])
         setSingleData(profileData[id])
         setShowHide(false)
-console.log(profileData[id])
+        console.log(profileData[id])
 
     }
-    const hide = (id:any)=>{
+    const hide = (id: any) => {
         setSingleData(null);
         setShowHide(true)
 
@@ -111,46 +177,48 @@ console.log(profileData[id])
                 {singlData == null ? <div className="grid grid-cols-1 gap-y-20 lg:grid-cols-3 lg:gap-y-0 lg:gap-x-8 ">
                     {profileData.map((link) => (
                         <div key={link.name} className="flex flex-col bg-white rounded-2xl shadow-xl">
-                            <div className="flex-1 relative pt-16 px-6 pb-8 md:px-8">
-                                <div className="absolute top-0 p-5 inline-block bg-indigo-600 rounded-xl shadow-lg transform -translate-y-1/2">
+                            <div className="flex-1 relative pt-10 px-6 pb-4 md:px-8">
+                                <div className="absolute top-0 p-3 inline-block bg-indigo-500 rounded-xl shadow-lg transform -translate-y-1/2">
                                     <link.icon className="h-6 w-6 text-white" aria-hidden="true" />
                                 </div>
                                 <h3 className="text-xl font-medium text-gray-900">{link.name}</h3>
                                 <p className="mt-4 text-base text-gray-500">{link.description}</p>
                             </div>
                             <div className="p-6 bg-gray-50 rounded-bl-2xl rounded-br-2xl md:px-8">
-                                { showhide ? <a onClick={()=>show(link?.id)} className="text-base cursor-pointer font-medium text-indigo-700 hover:text-indigo-600">
+                                {showhide ? <a onClick={() => show(link?.id)} className="text-base cursor-pointer font-medium text-indigo-700 hover:text-indigo-600">
                                     See More<span aria-hidden="true"> &rarr;</span>
                                 </a> :
-                                <a onClick={()=>hide(link?.id)}  className="text-base font-medium cursor-pointer text-indigo-700 hover:text-indigo-600">
-                                    <span aria-hidden="true"> &larr;</span>Back
-                                </a>}
+                                    <a onClick={() => hide(link?.id)} className="text-base font-medium cursor-pointer text-indigo-700 hover:text-indigo-600">
+                                        <span aria-hidden="true"> &larr;</span>Back
+                                    </a>}
                             </div>
                         </div>
                     ))}
                 </div>
-                :
-                <div className="grid grid-cols-1 gap-y-20 lg:gap-y-0 lg:gap-x-8 transform ease-in-out ">
-                    
+                    :
+                    <div className="grid grid-cols-1 gap-y-20 lg:gap-y-0 lg:gap-x-8 transform ease-in-out ">
+
                         <div key={singlData.name} className="flex flex-col bg-white rounded-2xl shadow-xl">
-                            <div className="flex-1 relative pt-16 px-6 pb-8 md:px-8">
-                                <div className="absolute top-0 p-5 inline-block bg-indigo-600 rounded-xl shadow-lg transform -translate-y-1/2">
+                            <div className="flex-1 relative pt-10 px-6 pb-8 md:px-8">
+                                <div className="absolute top-0 p-3 inline-block bg-indigo-600 rounded-xl shadow-lg transform -translate-y-1/2">
                                     <singlData.icon className="h-6 w-6 text-white" aria-hidden="true" />
                                 </div>
-                                <h3 className="text-xl font-medium text-gray-900">{singlData.name}</h3>
-                                <p className="mt-4 text-base text-gray-500">{singlData.description}</p>
+                                {/* <h3 className="text-2xl font-bold text-gray-900">{singlData.name}</h3> */}
+                                <div className="mt-4 ">
+                                    {singlData.id == 2 ? <Qualification props={singlData.data} /> : null}
+                                </div>
                             </div>
                             <div className="p-6 bg-gray-50 rounded-bl-2xl rounded-br-2xl md:px-8">
-                                { showhide ? <a onClick={()=>show(singlData?.id)} className="text-base cursor-pointer font-medium text-indigo-700 hover:text-indigo-600">
+                                {showhide ? <a onClick={() => show(singlData?.id)} className="text-base cursor-pointer font-medium text-indigo-700 hover:text-indigo-600">
                                     See More<span aria-hidden="true"> &rarr;</span>
                                 </a> :
-                                <a onClick={()=>hide(singlData?.id)}  className="text-base font-medium cursor-pointer text-indigo-700 hover:text-indigo-600">
-                                    <span aria-hidden="true"> &larr;</span>Back
-                                </a>}
+                                    <a onClick={() => hide(singlData?.id)} className="text-base font-medium cursor-pointer text-indigo-700 hover:text-indigo-600">
+                                        <span aria-hidden="true"> &larr;</span>Back
+                                    </a>}
                             </div>
                         </div>
-                    
-                </div>
+
+                    </div>
                 }
             </section>
         </div>

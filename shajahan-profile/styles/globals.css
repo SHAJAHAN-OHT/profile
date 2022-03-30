@@ -9,8 +9,8 @@ body {
 
 }
 
-@media screen and (min-width: 480px) {
+@media screen and (max-width: 500px) {
     body {
-        /* width: max-content;  */
+        width: max-content; 
     }
   }
