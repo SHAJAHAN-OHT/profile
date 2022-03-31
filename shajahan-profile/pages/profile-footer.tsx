@@ -72,13 +72,13 @@ clipRule="evenodd"
   
   export default function ProfileFooter() {
     return (
-      <footer className="bg-white md:mt-0 mt-5">
-        <div className="max-w-7xl mx-auto py-12 px-4 sm:px-6 md:flex md:items-center md:justify-center lg:px-8">
-          <div className="flex justify-center md:space-x-20 space-x-3 md:order-2">
+      <footer className="">
+        <div className="max-w-7xl mx-auto px-4 sm:px-4 md:flex md:items-center md:justify-center lg:px-8">
+          <div className="flex justify-center space-x-4 md:order-2">
             {navigation.map((item) => (
               <a key={item.name} href={item.href} target={"_blank"} className="text-gray-400 hover:text-gray-500">
                 <span className="sr-only">{item.name}</span>
-                <item.icon className="h-10 w-10" aria-hidden="true" />
+                <item.icon className="h-8 w-8" aria-hidden="true" />
               </a>
             ))}
           </div>
