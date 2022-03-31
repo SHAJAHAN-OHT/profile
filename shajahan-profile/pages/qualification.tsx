@@ -60,23 +60,23 @@ let data = {
 function Qualification() {
     // console.log("data", pageProps.props)
     return (
-        <div className="divide-y-2 space-y-2">
+        <div className="divide-y-2 divide-white space-y-2">
             <div className="space-y-3">
                 <h3 className="text-2xl font-bold text-gray-900">Skills</h3>
-                <ul>
+                <ul className="space-y-2">
                     {data?.skills.map((item: any, index: number) => (
-                        <li key={index} className="p-3 space-y-2 list-disc	list-inside">
+                        <li key={index} className="p-2  bg-white border border-red-800  rounded-3xl">
                             {item.point}
                         </li>
                     ))}
                 </ul>
             </div>
-            <div className="space-y-3 pt-2">
+            <div className="space-y-3 pt-6">
                 <h3 className="text-2xl font-bold text-gray-900">Qualification</h3>
-                <div>
+                <div className="space-y-3">
                     {data?.qualification.map((item: any, index: number) => (
-                        <div key={index} className="p-3 space-y-2">
-                            <div className="text-lg font-semibold">{item.name}</div>
+                        <div key={index} className="p-4 space-y-3 bg-white border border-red-800 rounded-3xl">
+                            <div className="text-xl font-semibold">{item.name}</div>
                             <p className="indent-8">{item.content}</p>
                         </div>
                     ))}

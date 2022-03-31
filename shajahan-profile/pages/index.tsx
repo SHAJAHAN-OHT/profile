@@ -18,11 +18,11 @@ export default function Home() {
     <div>
 
       <Head>
-        <link rel="shortcut icon" href="tab_img.png" type="image/x-icon" />
+        <link rel="shortcut icon" href="tab_img.png" className='bg-white' type="image/x-icon" />
         <title>Shajahan Shaik</title>
       </Head>
 
-      <div className='bg-gradient-to-r from-indigo-100 via-purple-300 to-pink-100'>
+      <div className='bg-gradient-to-r from-indigo-100 via-purple-300  to-pink-100'>
         <div className='z-40'>
           <Particles
             id="tsparticles"
@@ -35,7 +35,7 @@ export default function Home() {
                 // },
                 // image: url('./profile.jpeg')
               },
-              fpsLimit: 1200,
+              // fpsLimit: 1200,
               interactivity: {
                 events: {
                   onClick: {
@@ -70,7 +70,7 @@ export default function Home() {
                 },
                 links: {
                   color: "#000",
-                  distance: 150,
+                  // distance: 150,
                   enable: true,
                   opacity: 0.5,
                   width: 1,

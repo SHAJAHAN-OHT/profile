@@ -78,11 +78,11 @@ export default function PersonalProjects() {
                                             'h-8 w-8 rounded-full flex items-center justify-center ring-8 ring-lime-200'
                                         )}
                                     >
-                                        <event.icon className="h-5 w-5 text-black" aria-hidden="true" />
+                                        <event.icon className="h-5 w-5  text-black" aria-hidden="true" />
                                     </span>
                                 </div>
-                                <div className="min-w-0 pt-1.5 flex-1 flex justify-between space-x-4">
-                                    <div className='space-y-3'>
+                                <div className="min-w-0 pt-1.5 flex-1 flex justify-between space-x-4 bg-white border border-red-800   rounded-3xl">
+                                    <div className='space-y-3 p-4'>
                                         <h1 className="text-2xl font-bold text-gray-900">{event.name}</h1>
                                         <p className="text-xl text-gray-700 indent-12">
                                             {event.content}

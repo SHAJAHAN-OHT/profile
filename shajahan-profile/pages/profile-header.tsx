@@ -162,7 +162,7 @@ export default function ProfileHeader() {
 
     }
     return (
-        <div className="font-serif">
+        <div className="font-serif relative">
             {/* Header */}
             <div className="relative ">
                 <div className="absolute opacity-90 inset-0">
@@ -220,7 +220,7 @@ export default function ProfileHeader() {
 
                                 <p className="mt-4 text-base ">{link.description}</p>
                             </div>
-                            <div className="p-6 bg-gray-50 rounded-bl-2xl rounded-br-2xl md:px-8">
+                            <div className="p-3 bg-gray-200 rounded-bl-2xl rounded-br-2xl md:px-8">
                                 {showhide ? <a onClick={() => show(link?.id)} className="text-base cursor-pointer font-medium text-indigo-700 hover:text-indigo-600">
                                     See More<span aria-hidden="true"> &rarr;</span>
                                 </a> :
@@ -234,7 +234,7 @@ export default function ProfileHeader() {
                     :
                     <div className="grid grid-cols-1 gap-y-20 lg:gap-y-0 lg:gap-x-8">
 
-                        <div key={singlData.name} className="flex flex-col bg-lime-300 text-lg rounded-2xl shadow-xl">
+                        <div key={singlData.name} className="flex flex-col bg-lime-400 text-lg rounded-2xl shadow-xl">
                             <div className="flex-1 relative ">
                                 
                                 <div className="ml-2 bg-gradient-to-r from-lime-200 via-amber-100 to-pink-300 rounded-t-2xl p-6 ">
@@ -243,7 +243,7 @@ export default function ProfileHeader() {
                                     {singlData.id == 2 ? <Qualification /> : null}
                                 </div>
                             </div>
-                            <div className="p-2 bg-gray-50 rounded-bl-2xl rounded-br-2xl md:px-8">
+                            <div className="ml-2 p-2 bg-gray-50 rounded-bl-2xl rounded-br-2xl md:px-8">
                                 {showhide ? <a onClick={() => show(singlData?.id)} className="text-base cursor-pointer font-medium text-indigo-700 hover:text-indigo-600">
                                     See More<span aria-hidden="true"> &rarr;</span>
                                 </a> :
