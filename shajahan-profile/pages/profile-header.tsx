@@ -204,7 +204,7 @@ export default function ProfileHeader() {
                 <h2 className="sr-only" id="contact-heading">
                     Contact us
                 </h2>
-                {singlData == null ? <div className="grid grid-cols-1 gap-y-10 lg:grid-cols-3 lg:gap-y-0 lg:gap-x-8 ">
+                {singlData == null ? <div className="grid grid-cols-1 gap-y-10 pl-6 pr-6 lg:grid-cols-3 lg:gap-y-0 lg:gap-x-8 ">
                     {profileData.map((link) => (
                         <div key={link.name} className="flex flex-col bg-gradient-to-r from-cyan-700  to-cyan-400  text-white rounded-2xl shadow-xl">
                             <div className="flex-1 relative pt-10 px-6 pb-4 md:px-8">
@@ -237,7 +237,7 @@ export default function ProfileHeader() {
                         <div key={singlData.name} className="flex flex-col bg-lime-400 text-lg rounded-2xl shadow-xl">
                             <div className="flex-1 relative ">
                                 
-                                <div className="ml-2 bg-gradient-to-r from-lime-200 via-amber-100 to-pink-300 rounded-t-2xl p-6 ">
+                                <div className="ml-2 bg-gradient-to-r from-lime-100 via-amber-100 to-pink-100 rounded-t-2xl p-6 ">
                                     {singlData.id == 0 ? <Experience props={singlData.data} /> : null}
                                     {singlData.id == 1 ? <PersonalProjects /> : null}
                                     {singlData.id == 2 ? <Qualification /> : null}

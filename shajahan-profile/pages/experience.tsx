@@ -18,7 +18,13 @@ function Experience(pageProps: any) {
                         <h1 className="p-2 text-xl">
                             Smart Reports
                         </h1>
-                        <p className="p-2 ">Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis quia quasi eum mollitia debitis impedit inventore asperiores voluptatum nisi sed ea iure dignissimos provident nihil eaque, earum excepturi praesentium. Fugiat.</p>
+                        <p className="p-2 ">
+                            Developed a robust and holistic application for patients to manage quality health care services.
+                            It is an integrated single-page client application.
+                            It is a customized template for easy understanding of content, graph, scale, tooltip and color. 
+                            Firebase Analytics has been added to monitor user activity. This document can also be downloaded in PDF format. 
+                            To improve this, filtering data has been added to effectively display content. This is a responsive document.
+                        </p>
                         <div className="flex space-x-6">
                             <p className="bg-green-500 rounded-full pr-2 pl-2 text-white">Next js</p>
                             <p className="bg-green-500 rounded-full pr-2 pl-2 text-white">Tailwind CSS</p>

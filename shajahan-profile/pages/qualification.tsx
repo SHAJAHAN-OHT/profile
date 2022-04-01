@@ -26,7 +26,7 @@ let data = {
             point: 'Good knowledge on Fornt-end and Back-end development of Web Applications.',
         },
         {
-            point: 'Programming Languages Known, HTML, CSS, JavaScript and Frameworks : React, Next js, Angular, Tailwind CSS, Nest js, Express js, MongoDB.',
+            point: 'Programming Languages Known, HTML, CSS, JavaScript, React, Next js, Angular, Tailwind CSS, Nest js, Express js and MongoDB.',
         },
         {
             point: 'Good awareness on SQL.',
@@ -65,9 +65,11 @@ function Qualification() {
                 <h3 className="text-2xl font-bold text-gray-900">Skills</h3>
                 <ul className="space-y-2">
                     {data?.skills.map((item: any, index: number) => (
-                        <li key={index} className="p-2  bg-white border border-red-800  rounded-3xl">
-                            {item.point}
-                        </li>
+                        <div key={index} className="bg-red-400 rounded-tr-3xl rounded-br-3xl">
+                            <li className="p-2 ml-2 bg-white border  rounded-tr-3xl rounded-br-3xl">
+                                {item.point}
+                            </li>
+                        </div>
                     ))}
                 </ul>
             </div>
